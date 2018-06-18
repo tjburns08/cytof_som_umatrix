@@ -1,0 +1,29 @@
+---
+title: "project_notebook"
+author: "Tyler J Burns"
+date: "6/18/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## June 18, 2018
+
+This is the notebook for the large SOM project. It will initially contain
+the large SOM and umatrix visualization pursuits and eventually contain 
+the growing neural gas pursuits unless I decide to make this a different
+script entirely.
+
+Today's task is to plot a SOM and U-matrix. There are three datasets with 
+which I can work. The first is the TSORA dataset, or at least a single file
+thereof. The second is the Levin 32-dim dataset, with which I have experience
+already grouping. The third is the Mosmann rare subset datset. I need to do
+the TSORA dataset to show Henrik what it looks like. So I'll begin there. 
+This will help just because I know the datset so damn well. I'll then move
+to the other publicly available datasets. 
+
+
+
+
