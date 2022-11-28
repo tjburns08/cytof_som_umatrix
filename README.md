@@ -12,12 +12,12 @@ The data used in this project was CyTOF PBMCs from the laboratory of Henrik Mei 
 
 To look at the punchline, look at the pdf in doc/. To look at the code that generated the analysis and visualizations that ended up in the aforementioned pdf, go to src/. We note that we don't use the FlowSOM package here. We use the [Umatrix package from CRAN](https://cran.r-project.org/web/packages/Umatrix/index.html). 
 
-Specific scripts of interest, in src/:
+## Specific scripts of interest, in src:
 
-make_som_dim_titration.R: this is where you'll see how the SOMs are made. 
-mod_umatrix_maker.R: this is a helper function I didn't make, but I modified, to make the U-matrix. 
-som_mataclustering.R: I do the meta-clustering step to see how this looks on the U-Matrix, and I do a KNN density estimation as well. 
-find_moore_neighborhood.R: I compare the moore neighborhood of the SOM to the KNN of each node of the trained SOM in feature space. 
-leave_one_out_umatrix.R: I remove one marker from the original input markers and determine if this has an impact on how the U-matrix looks. 
-color_som_by_marker.R: I produce the U-matrix and color it by marker as one would a dimension reduction embedding. 
+- make_som_dim_titration.R: this is where you'll see how the SOMs are made. 
+- mod_umatrix_maker.R: this is a helper function I didn't make, but I modified, to make the U-matrix. 
+- som_mataclustering.R: I do the meta-clustering step to see how this looks on the U-Matrix, and I do a KNN density estimation as well. 
+- find_moore_neighborhood.R: I compare the moore neighborhood of the SOM to the KNN of each node of the trained SOM in feature space. 
+- leave_one_out_umatrix.R: I remove one marker from the original input markers and determine if this has an impact on how the U-matrix looks. 
+- color_som_by_marker.R: I produce the U-matrix and color it by marker as one would a dimension reduction embedding. 
 external_code/: code I didn't write, but either used or modified throughout the project. 
