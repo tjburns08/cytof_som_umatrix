@@ -24,6 +24,89 @@ the TSORA dataset to show Henrik what it looks like. So I'll begin there.
 This will help just because I know the datset so damn well. I'll then move
 to the other publicly available datasets. 
 
+I got to 70x70 for 100k cells. Done. All results are in the 2018-06-18 folder.
+The next step is to color these nodes by cell abundance, as well as the marker
+expression of the nodes. 
+
+# June 19, 2018
+
+Today's task is to map the cells onto the U matrices. I think the easiest 
+thing here is to make the t-SNE map and upload to Cytobank. Then we just
+do side by side coloring of cells vs nodes. 
+
+First thing I'm doing is getting out the t-SNE map of 100k cells for 
+comparison. It sure is taking a while to run. The next thing I have to do is
+figure out how to color the nodes by the marker expression. 
+
+Done with the t-SNE map comparison based on U-matrix occupation. The next 
+step is to color the U-matrix by marker expression in all regions. 
+
+For the sake of simplicity, I'll take the 100 x 100 SOM for the 100k cell 
+dataset, and color that by each individual marker. The problem will be the
+color palatte. Perhaps the easiest thing is I keep everything grey-scaled
+for now. 
+
+Ok, I have the marker coloring working! I think I'm going to call it a day
+and head home for some dinner! All results from today go into the 
+2018-06-19 folder. 
+
+## June 20, 2018
+
+With the help of Sofie, the Umatrix for SOM function was modified to include
+the Chebyshev distance matrix along with varying whether we look at the mean
+or the max of the distances between the SOM's nearest neighbors. 
+
+Also added to the results folder of today's date is the U matrix comparison to 
+the KNN density estimation to determine if there is anything we get out the one 
+that we don't get in the other. We observed that the differences were not 
+striking, but there were some insights from the KNN-DE that were different
+than the U-matrix, like nodes that are very far removed from the rest of the
+map, especially in the boundary regions, with the example being the "three 
+corners" region between the B cells, T cells, and Monocytes. 
+
+Note to check whether Toroid = T or F. It should be F. 
+
+The results of the leave-one-out Umatrix calculation analysis are different
+in terms of the matrix but quite similar visually. It's hard to say if I did 
+it right. I'll have to look a bit more into it. Tomorrow I go to the 
+Netherlands, but I'll probably have a nice crack at it on Friday. 
+
+## June 22, 2018
+
+Checked the fildelity of the SOM by visualizing the U-matrix in relation to 
+a fidelity score. This was the concordance of the KNN with k = 8 and the outer
+rim of the Moore neighborhood. This was in the find_moore_neighborhood script
+and the results are in the 2018-06-22 script. The results was that low fidelity
+exists at the boundaries. Sofie and Yvan were not surprised. 
+
+Yvan wants to see two things. 
+1) Do the SOM on multiple datasets to get a feel for how the U-matrix treats
+it. 
+2) Do the SOM with more nodes than the number of cells (called ESOM). Just
+out of intellectual curiosity if anything, but it might actually reveal 
+interesting things. 
+
+## June 25, 2018
+
+I am now making a SOM that is 10x larger than the number of cells in the 
+manifold. The hypothesis is that the visualizaiton will look more like islands
+of a t-SNE map when you actually fit the cells to the positions. Luckily
+my code is robust enough to handle this change. Of note this might take a 
+minute to train. The next task after that (after characterizing everything)
+is to run the SOM on the wanderlust dataset to see how a trajectory is 
+interpreted by a self-organizing map.
+
+Start time for computation of 1000 x 1000 SOM: 10:10am. 
+Progress: 
+Epoch 6 at 10:56am.
+Epoch 10 at 11:53am. 
+Epoch 23 at 2:44pm.
+End time: 3:22pm.
+
+Looks weeeeiiiiirrrrddd. Need to initialize with starting points WITHIN the
+manifold.
+
+
 
 
 
